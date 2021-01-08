@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja"">
+<head>
+	<meta charset="UTF-8">
+	<title>BMIと適性体重</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+	<div id="app" class="container">
+    <h2 class="text-center mb-4">BMIと適性体重</h2>
+    <p class="text-center">身長<input class="ml-2" type="number" name="height" v-model="height">cm</p>
+    <p class="text-center">体重<input class="ml-2" type="number" name="weight" v-model="weight">kg</p>
+    <div class="d-flex justify-content-center">
+      <button v-on:click="multipleHandler">計算</button>
+      <button class="ml-2" v-on:click="reset">クリア</button>
+    </div>
+    <table class="table table-bordered mt-3">
+      <tr>
+        <td class="text-center">肥満度</td>
+        <td class="text-center">適性体重</td>
+        <td class="text-center">適正体重との比較</td>
+        <td class="text-center">BMI</td>
+      </tr>
+      <tr>
+        <td>{{ degree }}</td>
+        <td class="text-center">{{appropriateWeightValue}}kg</td>
+        <td class="text-center">{{weightDifferenceValue}}kg</td>
+        <td class="text-center">{{bmiValue}}</td>
+      </tr>
+    </table>
+  </div>
+
+	<script src="https://jp.vuejs.org/js/vue.js"></script>
+	<script src="bmiCalculation.js"></script>
+</body>
+</html>
